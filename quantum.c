@@ -26,7 +26,7 @@ QuantumRegister* init_register(int n_qubits) {
 }
 
 void set_amplitude(QuantumRegister *reg, unsigned long index, double complex val) {
-    if (cabs(val) < EPSILON) return; // Не сохраняем малые значения
+    if (cabs(val) < EPSILON) return;
 
     unsigned long h = hash(index, reg->table_size);
     StateNode *node = reg->hash_table[h];
